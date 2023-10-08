@@ -2,7 +2,8 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'DevBlog.settings')
+#from django.contrib.auth.middleware import SessionAuthenticationMiddleware
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 def main():
     """Run administrative tasks."""
