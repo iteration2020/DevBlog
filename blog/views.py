@@ -1,7 +1,5 @@
 from django.views.generic import ListView, DetailView, TemplateView
 from .models import Post
-from django.db import models
-
 
 class BlogList(ListView):
     model = Post
@@ -18,3 +16,13 @@ class BlogDetailView(DetailView):
 
 class AboutPageView(TemplateView):
     template_name = 'post_detail.html'
+
+def home(request):
+    context = {
+        'posts': Post.objects.all()
+    }
+    return render(request, 'blog/home.html', context)
+
+
+def about(request):
+    return render(request, 'blog/about.html', {'title': 'О нас'})
