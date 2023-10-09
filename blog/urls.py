@@ -1,5 +1,5 @@
 from django.urls import path,include
-from .views import BlogList,BlogDetailView,AboutPageView
+from .views import BlogList,BlogDetailView,AboutPageView,LerningPageView,upload
 from django.views.generic import ListView
 
 urlpatterns = [
@@ -9,4 +9,6 @@ urlpatterns = [
     path('gtran/', include('gtranslate.urls')),
     # for user authorized dynamic translation
     path('gtran/', include('gtranslate.urls_auth')),
+    path('Lerning/',LerningPageView.as_view(),name='Lerning'),
+    path('upload', upload, name='upload')
 ]

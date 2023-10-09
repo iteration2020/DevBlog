@@ -1,5 +1,6 @@
 from django.views.generic import ListView, DetailView, TemplateView
 from .models import Post
+from django.shortcuts import redirect
 from django.db import models
 
 
@@ -18,3 +19,12 @@ class BlogDetailView(DetailView):
 
 class AboutPageView(TemplateView):
     template_name = 'post_detail.html'
+
+
+class LerningPageView(TemplateView):
+    template_name = 'Lerning.html'
+
+def upload(request):
+    if request.method == 'POST':
+        #сюда код занесения в бд
+        return redirect('Lerning')
