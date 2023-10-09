@@ -43,13 +43,18 @@
                              </ul>
 
                          </li>
-                        <li class="nav-link">
-                            {% load google_translate %}
+
+                        <ul class="navbar-nav position-absolute" style="right: 5%">
+        <li class="nav-item dropdown">
+            {% load google_translate %}
                             {% google_translate type='vertical' language='ru' %}
-                        </li>
+
+
+        </li>
+
+    </ul>
                     </ul>
-                    {% load google_translate %}
-                                {% google_translate type='vertical' language='ru' %}
+
                 </div>
             </div>
         </nav>
