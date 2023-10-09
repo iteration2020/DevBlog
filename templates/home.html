@@ -41,8 +41,15 @@
                                  <li> <a class="dropdown-item" href="/IOT">Internet of Things</a>
                                  </li>
                              </ul>
+
                          </li>
+                        <li class="nav-link">
+                            {% load google_translate %}
+                            {% google_translate type='vertical' language='ru' %}
+                        </li>
                     </ul>
+                    {% load google_translate %}
+                                {% google_translate type='vertical' language='ru' %}
                 </div>
             </div>
         </nav>
@@ -54,7 +61,6 @@
                     <div class="row align-items-start">
                         <div class="col">
                             <div class="bg-image card">
-                                {% load gtranslate %}
 
                                 <h2>{{ post.title }}</h2>
                                 <p>Author: <b>{{ post.author }}</b></p>
