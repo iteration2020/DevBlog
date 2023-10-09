@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Title</title>
+</head>
+<body>
+<div class="g-image"
+     style="background: linear-gradient(90deg, rgb(151,159,161) 0%, rgba(50,107,228,1) 41%, rgba(107,177,191,1) 100%); background-size: 100%;">
+    <header>
+        <h1>Модель прогнозирования</h1>
+    </header>
+</div>
+<div>
+<div>
+    <button>Обучить модель прогнозирования</button>
+</div>
+
+<div>
+    <button>Запустить модель прогнозирования</button>
+</div>
+<div>
+   <form action="{% url 'upload' %}" method="POST">
+                  {% csrf_token %}
+                   <button type="submit">Записать результаты в базу данных</button>
+              </form>
+</div>
+</div>
+</div>
+</body>
+</html>
