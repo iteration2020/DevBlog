@@ -1,4 +1,5 @@
 from django.urls import path
+from django.contrib import admin
 from .views import (
     PostListView,
     PostDetailView,
@@ -11,6 +12,7 @@ from .views import (
 from . import views
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('', PostListView.as_view(), name='blog-home'),
     path('user/<str:username>', UserPostListView.as_view(), name='user-posts'),
     path('post/<int:pk>/', PostDetailView.as_view(), name='post-detail'),
