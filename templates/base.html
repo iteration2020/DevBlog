@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+    {% load google_translate %}
     <!-- Обязательные мета-теги -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -35,9 +35,12 @@
             <!-- Правая часть навигационной панели -->
             <div class="navbar-nav">
               {% if user.is_authenticated %}
+                  {% google_translate type='vertical' language='ru'%}
                 <a class="nav-item nav-link" href="{% url 'profile' %}">Профиль</a>
                 <a class="nav-item nav-link" href="{% url 'logout' %}">Выход</a>
               {% else %}
+
+
                 <a class="nav-item nav-link" href="{% url 'login' %}">Вход</a>
                 <a class="nav-item nav-link" href="{% url 'register' %}">Регистрация</a>
               {% endif %}
@@ -48,6 +51,7 @@
     </header>
     <main role="main" class="container">
       <div class="row">
+
         <div class="col-md-8">
           {% if messages %}
             {% for message in messages %}
