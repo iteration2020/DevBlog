@@ -9,6 +9,7 @@ from django.views.generic import (
     DeleteView
 )
 from .models import Post
+from django.utils.text import slugify
 
 
 def home(request):
@@ -42,10 +43,13 @@ class PostDetailView(DetailView):
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
-    fields = ['title', 'content']
+    fields = ["title", "content"]
 
     def form_valid(self, form):
-        form.instance.author = self.request.user
+        obj = form.save(commit=False)
+        obj.author = self.request.user
+        obj.slug = slugify(form.cleaned_data['title'])
+        obj.save()
         return super().form_valid(form)
 
 
