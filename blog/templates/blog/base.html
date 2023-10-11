@@ -38,7 +38,8 @@
                   {% google_translate type='vertical' language='ru'%}
                 <a class="nav-item nav-link" href="{% url 'post-create' %}">Новая запись</a>
                 <a class="nav-item nav-link" href="{% url 'profile' %}">Профиль</a>
-                <a class="nav-item nav-link" href="{% url 'logout' %}">Выход</a>
+                <a class="nav-item nav-link" href="{% url 'logout' %}">Выход</a><img class="rounded-circle account-img" src="{{ user.profile.image.url }}" style="width:35px;height:35px" >
+
               {% else %}
                 {% google_translate type='vertical' language='ru'%}
                 <a class="nav-item nav-link" href="{% url 'login' %}">Вход</a>
