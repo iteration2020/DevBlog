@@ -1,11 +1,11 @@
 FROM openjdk:20
-FROM python:latest
+FROM python:3.11
 
 ENV PYTHONDONTWRYTEBYTECODE 1
 ENV PYTHOUNBEFFERED 1
 
 RUN pip install --upgrade pip
-COPY ./requrements.txt .
+COPY blog/requrements.txt .
 
 RUN pip install -r requrements.txt
 
