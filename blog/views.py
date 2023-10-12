@@ -46,10 +46,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     fields = ["title", "content"]
 
     def form_valid(self, form):
-        obj = form.save(commit=False)
-        obj.author = self.request.user
-        obj.slug = slugify(form.cleaned_data['title'])
-        obj.save()
+        form.instance.author = self.request.user
         return super().form_valid(form)
 
 
